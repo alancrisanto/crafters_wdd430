@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import DropDownComponent from "../dropdown/dropdown";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
-import styles from "./Filter.module.css";
+import styles from "./filter.module.css";
 
 function Filter() {
 	const [showFilter, setShowFilter] = useState(false);
@@ -29,11 +29,7 @@ function Filter() {
 				</Button>
 			</div>
 			{showFilter && (
-				<div
-					className={`filter-body ${
-						showFilter ? styles.expanded : ""
-					} d-md-flex align-items-center mt-4`}
-				>
+				<div className={`filter-body ${showFilter ? styles.expanded : ""} d-md-flex align-items-center mt-4`}>
 					<DropDownComponent name="Sort" items={arrSort} />
 					<DropDownComponent items={arrCategory} name="Category" />
 				</div>
